@@ -5,6 +5,7 @@ commands_dict = {
   'show': lists.show_lists,
   'use': lists.use_list,
   'create': lists.create_list,
+  'delete': lists.delete_list,
   'add': todos.add_item,
   'all': todos.show_items,
   'edit': todos.edit_item,

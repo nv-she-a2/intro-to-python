@@ -1,3 +1,4 @@
+import os
 import json
 from datetime import datetime
 
@@ -47,5 +48,23 @@ def create_list(args):
         # add to the lists.json
         lists_json.seek(0)
         json.dump(data, lists_json, sort_keys=True, indent=True)
+    except:
+      print('Some error occurred!')
+
+def delete_list(args):
+  list_name = args[0]
+  data = {}
+  with open(FILE_NAME, 'r+') as lists_json:
+    try:
+      # check if file exists
+      data = json.load(lists_json)
+      if (data.get(list_name)):
+        os.remove(f'lists/{list_name}.json')
+        data.pop(list_name)
+        lists_json.seek(0)
+        lists_json.truncate()
+        json.dump(data, lists_json, sort_keys=True, indent=True)
+      else:
+        print('List does not exist! Please give a valid List name...')
     except:
       print('Some error occurred!')

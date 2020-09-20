@@ -10,7 +10,7 @@ def parse(command):
     return cmd_type, []
   elif (cmd_type == 'list'):
     cmd_name = cmd_list[1]
-    if (cmd_name in ['show', 'use', 'create']):
+    if (cmd_name in ['show', 'use', 'create','delete']):
       return cmd_name, cmd_list[2:]
     else:
       return 'invalid', []
