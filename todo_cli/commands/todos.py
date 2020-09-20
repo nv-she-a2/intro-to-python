@@ -29,7 +29,7 @@ def add_item(args):
   list_name = set_list(args[0])
   if (not list_name):
     return
-  title = args[1]
+  title = ' '.join(args[1:])
   data = get_data(list_name)
   new_todo = {
     'title': title,
@@ -65,7 +65,7 @@ def edit_item(args):
   if (not list_name):
     return
   item_id = int(args[1])
-  new_title = args[2]
+  new_title = ' '.join(args[2:])
   data = get_data(list_name)
   updated_todo = {
     'title': new_title,
