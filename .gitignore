@@ -1,3 +1,4 @@
 *_live/
 __pycache__
 .vscode/
+.DS_Store
