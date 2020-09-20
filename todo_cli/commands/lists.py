@@ -1,4 +1,3 @@
-import os.path
 import json
 from datetime import datetime
 
@@ -27,12 +26,10 @@ def use_list(args):
 
 def create_list(args):
   list_name = args[0]
-  # print(os.path.abspath('.'))
   new_list = {}
   with open(FILE_NAME, 'r+') as lists_json:
     try:
       data = json.load(lists_json)
-      # print(data)
       # check if file already exists
       if (data.get(list_name)):
         print('List already exists! Try a different name...')
